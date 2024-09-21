@@ -3,10 +3,10 @@
     <string name="app_name">ସମ୍ବେଦନା ସୂଚନା</string>
     <string name="change_lang">ଭାଷା ବଦଳାନ୍ତୁ</string>
     <string name="hello_world">ନମସ୍କାର ବିଶ୍ବ</string>
-    <string name="login_email_hint">ଇମେଲ୍ ପ୍ରୟୋଗକର୍ତ୍ତା</string>
+    <string name="login_email_hint">ଇମେଲ୍</string>
     <string name="login_password_hint">ପାସ୍‌ୱାର୍ଡ</string>
     <string name="login_button">ଲଗିନ୍</string>
-    <string name="login_forgot_password">ପାସ୍‌ୱାର୍ଡ ବିସର୍ଗ କରିଛି?</string>
+    <string name="login_forgot_password">ପାସୱାର୍ଡ ଭୁଲିଗଲେ?</string>
     <string name="login_title">ଲଗିନ୍ କରନ୍ତୁ</string>
     <string name="create_event_title">ନୂତନ ଘଟଣା</string>
     <string name="create_event_comment_hint">ମନ୍ତବ୍ୟ</string>
@@ -28,7 +28,7 @@
     <string name="failed_server">ସର୍ଭର ସହିତ ସଂଯୋଗ ରୁକିଗଲା</string>
     <string name="login_here">ଏଠାରେ ଲଗିନ୍ କରନ୍ତୁ</string>
     <string name="statistics_text">ସଂଖ୍ୟାନୁକ୍ରମ</string>
-    <string name="flood_event_text">ବାଣ୍ଡା ଘଟଣା</string>
-    <string name="fire_event_text">ଆଗ ଘଟଣା</string>
+    <string name="flood_event_text">ବନ୍ୟା ଘଟଣା</string>
+    <string name="fire_event_text">ଅଗ୍ନି ଘଟଣା</string>
     <string name="earthquake_event_text">ଭୂକମ୍ପ ଘଟଣା</string>
 </resources>

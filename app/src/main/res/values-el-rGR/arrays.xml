@@ -2,12 +2,12 @@
 <resources>
     <string-array name="lang_array">
         <item>-</item>
-        <item>Αγγλικά</item>
-        <item>Ελληνικά</item>
+        <item>English</item>
+        <item>ଓଡ଼ିଆ</item>
     </string-array>
     <string-array name="types">
-        <item>Σεισμός</item>
-        <item>Φωτιά</item>
-        <item>Πλημμύρα</item>
+        <item>ଭୂମିକମ୍ପ</item>
+        <item>ଅଗ୍ନି ବିପର୍ଯ୍ୟୟ</item>
+        <item>ବନ୍ୟା</item>
     </string-array>
 </resources>
