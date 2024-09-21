@@ -77,25 +77,24 @@
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
 
+    <!-- Select Image Button -->
+
+    <!-- Selected Image TextView -->
     <Button
-        android:id="@+id/sendEventButton"
+        android:id="@+id/selectImageButton"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="@string/send"
+        android:layout_height="48dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@android:color/darker_gray"
+        android:text="Select Image"
+        app:layout_constraintBottom_toTopOf="@+id/selectedImageTextView"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toBottomOf="@+id/editTextMultiLine" />
 
-    <Spinner
-        android:id="@+id/selectLangSpinner"
-        style="@android:style/Widget.Material.Light.Spinner"
-        android:layout_width="112dp"
-        android:layout_height="38dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-<!--    // START v0.2-->
     <TextView
         android:id="@+id/selectedImageTextView"
         android:layout_width="wrap_content"
@@ -105,15 +104,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/selectImageButton" />
+
+    <!-- Send Event Button -->
+
     <Button
-        android:id="@+id/selectImageButton"
+        android:id="@+id/sendEventButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Select Image"
+        android:layout_marginTop="152dp"
+        android:text="@string/send"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toBottomOf="@+id/sendEventButton" />
-<!--    // END v0.2-->
+        app:layout_constraintTop_toBottomOf="@+id/editTextMultiLine" />
+
+    <Spinner
+        android:id="@+id/selectLangSpinner"
+        style="@android:style/Widget.Material.Light.Spinner"
+        android:layout_width="112dp"
+        android:layout_height="38dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
