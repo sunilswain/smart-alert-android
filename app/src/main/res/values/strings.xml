@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">SmartAlert</string>
+    <string name="change_lang">Change Language</string>
+    <string name="hello_world">Hello World</string>
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Password</string>
+    <string name="login_button">Login</string>
+    <string name="login_forgot_password">Forgot your password?</string>
+    <string name="login_title">Login</string>
+    <string name="create_event_title">New Event</string>
+    <string name="create_event_comment_hint">Comment</string>
+    <string name="create_event_comment">Comment</string>
+    <string name="send">Send</string>
+    <string name="register_title">Register</string>
+    <string name="register_button">Register</string>
+    <string name="register_phone_hint">Phone</string>
+    <string name="type_event_title">Event type</string>
+    <string name="select_type_spinner">Select...</string>
+    <string name="declined_location_request_title">Declined request for location tracking</string>
+    <string name="declined_location_request_message">This app depends on your location. By not granting permission to your location you will not be able to send new events.</string>
+    <string name="location_sent_successfully">Event sent successfully</string>
+    <string name="register_here">Register here</string>
+    <string name="email_required">Email field is required</string>
+    <string name="phone_required">Phone field is required</string>
+    <string name="password_required">Password field is required</string>
+    <string name="bad_request">Invalid credentials</string>
+    <string name="failed_server">Failed to connect to server</string>
+    <string name="login_here">Login here</string>
+    <string name="statistics_text">Statistics</string>
+    <string name="flood_event_text">Flood Events</string>
+    <string name="fire_event_text">Fire Events</string>
+    <string name="earthquake_event_text">Earthquake Events</string>
+</resources>
