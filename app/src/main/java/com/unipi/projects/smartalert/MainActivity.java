@@ -6,8 +6,11 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+
+import android.database.Cursor;
 import android.location.Location;
 import android.location.LocationManager;
+import android.provider.OpenableColumns;
 import android.util.Base64;
 import android.location.LocationListener;
 
@@ -28,6 +31,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.unipi.projects.smartalert.Services.Events.EventResult;
@@ -93,14 +97,18 @@ public class MainActivity extends AppCompatActivity {
                 return; // Exit early
             }
 
-            Single<EventResult> singleEventResult;
             EventService eventService = new EventService();
+            Single<EventResult> singleEventResult;
 
-            if (editTextMultiLine.getText().toString().isEmpty()) {
-                singleEventResult = eventService.SendEvent(selectedType, _lat.toString(), _long.toString(), userId);
-            } else {
-                String comment = editTextMultiLine.getText().toString();
+            String comment = editTextMultiLine.getText().toString();
+            Log.i("TAG", "Comment: " + comment);
+            if (base64Image == null) {
+                Log.i("TAG", "Sending request without img");
+                // Send event without image
                 singleEventResult = eventService.SendEvent(selectedType, _lat.toString(), _long.toString(), comment, userId);
+            } else {
+                // Send event with the selected image
+                singleEventResult = eventService.SendEvent(selectedType, _lat.toString(), _long.toString(), comment, base64Image, userId);
             }
 
             singleEventResultSubscription(singleEventResult);
@@ -120,14 +128,46 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
             Uri imageUri = data.getData();
+            Log.i("TAG", "Image URI: " + imageUri.toString());
             try {
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imageUri);
                 base64Image = encodeImage(bitmap); // Convert to Base64
-                // Optionally display the image in an ImageView
+
+                // Get the file name from the Uri
+                String fileName = getFileName(imageUri);
+
+                // Update the TextView to show that an image was selected
+                TextView selectedImageTextView = findViewById(R.id.selectedImageTextView);
+                selectedImageTextView.setText("Image Selected: " + fileName);
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
+    }
+
+    private String getFileName(Uri uri) {
+        String result = null;
+        if (uri.getScheme().equals("content")) {
+            Cursor cursor = getContentResolver().query(uri, null, null, null, null);
+            try {
+                if (cursor != null && cursor.moveToFirst()) {
+                    result = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME));
+                }
+            } finally {
+                if (cursor != null) {
+                    cursor.close();
+                }
+            }
+        }
+        if (result == null) {
+            result = uri.getPath();
+            int cut = result.lastIndexOf('/');
+            if (cut != -1) {
+                result = result.substring(cut + 1);
+            }
+        }
+        return result;
     }
 
     private String encodeImage(Bitmap bitmap) {

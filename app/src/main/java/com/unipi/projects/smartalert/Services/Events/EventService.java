@@ -30,17 +30,16 @@ public class EventService implements IEventService{
     }
 
     @Override
-    public Single<EventResult> SendEvent(String type, String latitude, String longitude, String comment, String photoPath, String user_id) {
+    public Single<EventResult> SendEvent(String type, String latitude, String longitude, String comment, String base64Image, String user_id) {
         RequestBody typeRequestBody = RequestBody.create(MediaType.parse("text/plain"), type);
         RequestBody latitudeRequestBody = RequestBody.create(MediaType.parse("text/plain"), latitude);
         RequestBody longitudeRequestBody = RequestBody.create(MediaType.parse("text/plain"), longitude);
         RequestBody commentRequestBody = RequestBody.create(MediaType.parse("text/plain"), comment);
         RequestBody userIdRequestBody = RequestBody.create(MediaType.parse("text/plain"), user_id);
 
-        // Prepare the photo file part
-        File photoFile = new File(photoPath);
-        RequestBody photoRequestBody = RequestBody.create(MediaType.parse("image/jpeg"), photoFile);
-        MultipartBody.Part photoPart = MultipartBody.Part.createFormData("photo", photoFile.getName(), photoRequestBody);
+        // Prepare the base64 image part
+        RequestBody photoRequestBody = RequestBody.create(MediaType.parse("text/plain"), base64Image);
+        MultipartBody.Part photoPart = MultipartBody.Part.createFormData("photo", "image.png", photoRequestBody);
 
         IEventHttp eventHttp = RetrofitService.retrofit.create(IEventHttp.class);
         Single<EventResult> eventCall = eventHttp.SendEvent(typeRequestBody, latitudeRequestBody, longitudeRequestBody, commentRequestBody, photoPart, userIdRequestBody);
@@ -58,7 +57,7 @@ public class EventService implements IEventService{
         RequestBody userIdRequestBody = RequestBody.create(MediaType.parse("text/plain"), user_id);
 
         IEventHttp eventHttp = RetrofitService.retrofit.create(IEventHttp.class);
-        Single<EventResult> eventCall = eventHttp.SendEvent(typeRequestBody, latitudeRequestBody, longitudeRequestBody, null, null, userIdRequestBody);
+        Single<EventResult> eventCall = eventHttp.SendEvent(typeRequestBody, latitudeRequestBody, longitudeRequestBody, commentRequestBody, null, userIdRequestBody);
 
         return eventCall;
     }
