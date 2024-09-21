@@ -6,8 +6,9 @@
         <item>ଓଡିଆ</item>
     </string-array>
     <string-array name="types">
-        <item>Earthquake</item>
-        <item>Fire</item>
-        <item>Flood</item>
+        <item>Earthquake 🌎</item>
+        <item>Fire 🔥</item>
+        <item>Flood 🌊</item>
+        <item>Emergency ❗</item>
     </string-array>
 </resources>
