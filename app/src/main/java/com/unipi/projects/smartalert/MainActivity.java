@@ -74,8 +74,8 @@ public class MainActivity extends AppCompatActivity {
         setupSpinnerLangSelection();
         onSpinnerChanged();
         setupSpinnerSelection();
-        locationRequest();
 
+        locationRequest();
         _locationListener = setLocationListener();
         _locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
 
@@ -284,5 +284,8 @@ public class MainActivity extends AppCompatActivity {
         Configuration config = resources.getConfiguration();
         config.setLocale(locale);
         resources.updateConfiguration(config, displayMetrics);
+    }
+
+    public static class OfflineAcitivity {
     }
 }

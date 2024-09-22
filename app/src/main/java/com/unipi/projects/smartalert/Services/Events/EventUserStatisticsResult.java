@@ -4,6 +4,7 @@ public class EventUserStatisticsResult {
     int earthquakeEventsNum;
     int fireEventsNum;
     int floodEventsNum;
+    int emergencyEventsNum;
 
     public int getEarthquakeEventsNum() {
         return earthquakeEventsNum;
@@ -28,4 +29,14 @@ public class EventUserStatisticsResult {
     public void setFloodEventsNum(int floodEventsNum) {
         this.floodEventsNum = floodEventsNum;
     }
+
+    public int getEmergencyEventsNum() {
+        return emergencyEventsNum;
+    }
+
+    public void setEmergencyEventsNumEventsNum(int floodEventsNum) {
+        this.emergencyEventsNum = emergencyEventsNum;
+    }
+
+
 }

@@ -2,9 +2,12 @@ package com.unipi.projects.smartalert;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 
 import android.util.DisplayMetrics;
@@ -36,6 +39,17 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Check if the user is online
+        if (!isOnline()) {
+            // If offline, navigate to OfflineActivity
+            Log.i("Network Status", "User is offline, redirecting to OfflineActivity");
+            Intent offlineIntent = new Intent(LoginActivity.this, OfflineActivity.class);
+            startActivity(offlineIntent);
+            finish();
+            return;
+        }
+
         setContentView(R.layout.activity_login);
         setupSpinnerSelection();
         onSpinnerChanged();
@@ -117,7 +131,11 @@ public class LoginActivity extends AppCompatActivity {
                     startActivity(registerIntent);
         });
     }
-
+    private boolean isOnline() {
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+        return networkInfo != null && networkInfo.isConnected();
+    }
     private void setupSpinnerSelection() {
         Spinner spinner = findViewById(R.id.selectLangSpinner);
 

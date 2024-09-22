@@ -15,7 +15,7 @@
     <string name="register_button">Register</string>
     <string name="register_phone_hint">Phone</string>
     <string name="type_event_title">Event type</string>
-    <string name="select_type_spinner">Select...</string>
+    <string name="select_type_spinner">Select</string>
     <string name="declined_location_request_title">Declined request for location tracking</string>
     <string name="declined_location_request_message">This app depends on your location. By not granting permission to your location you will not be able to send new events.</string>
     <string name="location_sent_successfully">Event sent successfully</string>
@@ -30,4 +30,11 @@
     <string name="flood_event_text">Flood Events</string>
     <string name="fire_event_text">Fire Events</string>
     <string name="earthquake_event_text">Earthquake Events</string>
+
+    <string name="watermark_text" translatable="false">A TechNova project by Team @SheCodes</string>
+    <string name="watermrk_text" translatable="false">A TechNova project by Team @SheCodes</string>
+    <string name="emergency_event_text">Emergency</string>
+    <string name="select_image">Select Image</string>
+    <string name="no_image_selected">No image selected</string>
+    <string name="default_sms_text" translatable="false">Default SMS Text</string>
 </resources>

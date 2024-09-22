@@ -63,6 +63,8 @@ public class ProfileActivity extends AppCompatActivity {
         TextView earthquakeEventsCountTextView = findViewById(R.id.earthquakeEventsCount);
         TextView fireEventsCountTextView = findViewById(R.id.fireEventsCount);
         TextView floodEventsCountTextView = findViewById(R.id.floodEventsCount);
+        TextView emergencyEventsCountTextView = findViewById(R.id.emergencyEventsCount);
+
 
         Single<EventUserStatisticsResult> singleEventUserStatisticsResult;
         EventService eventService = new EventService();
@@ -89,6 +91,8 @@ public class ProfileActivity extends AppCompatActivity {
 
                         floodEventsCountTextView
                                 .setText(String.valueOf(eventUserStatisticsResult.getFloodEventsNum()));
+                        emergencyEventsCountTextView
+                                .setText(String.valueOf(eventUserStatisticsResult.getEmergencyEventsNum()));
                     }
 
                     @Override

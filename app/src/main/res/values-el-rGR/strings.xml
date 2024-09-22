@@ -16,7 +16,7 @@
     <string name="register_button">ରେଜିଷ୍ଟର</string>
     <string name="register_phone_hint">ଦୂରଭାଷ</string>
     <string name="type_event_title">ଘଟଣାର ପ୍ରକାର</string>
-    <string name="select_type_spinner">ଚୟନ କରନ୍ତୁ...</string>
+    <string name="select_type_spinner">ଚୟନ କରନ୍ତ</string>
     <string name="declined_location_request_title">ସ୍ଥାନ ଅନୁମତି ବାତିଲ କରିଛନ୍ତି</string>
     <string name="declined_location_request_message">ଏହି ଆପ୍ପ୍ଟି ଆପଣଙ୍କର ସ୍ଥାନରେ ନିର୍ଭର କରେ। ଯଦି ଆପଣ ସ୍ଥାନ ପାଇଁ ଅନୁମତି ନ ଦିଅନ୍ତି, ତେବେ ନୂତନ ଘଟଣା ପଠାଇପାରିବେ ନାହିଁ।</string>
     <string name="location_sent_successfully">ଘଟଣା ସଫଳତାର ସହିତ ପଠାଇବାକୁ ହୋଇଛି</string>
@@ -31,4 +31,7 @@
     <string name="flood_event_text">ବନ୍ୟା ଘଟଣା</string>
     <string name="fire_event_text">ଅଗ୍ନି ଘଟଣା</string>
     <string name="earthquake_event_text">ଭୂକମ୍ପ ଘଟଣା</string>
+    <string name="emergency_event_text">ଜରୁରୀକାଳୀନ ପରିସ୍ଥିତି</string>
+    <string name="select_image">ପ୍ରତିଛବି ଚୟନ କରନ୍ତୁ</string>
+    <string name="no_image_selected">ପ୍ରତିଛବି ଚୟନ ହୋଇନାହିଁ</string>
 </resources>
