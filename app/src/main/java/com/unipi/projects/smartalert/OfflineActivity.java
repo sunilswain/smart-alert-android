@@ -4,6 +4,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import android.text.Editable;
@@ -45,13 +46,26 @@ public class OfflineActivity extends AppCompatActivity {
     private Double _long;
 
     private static final int PERMISSION_SEND_SMS = 123;
-    private final String predefinedNumber = "1234567890";
+    private final String predefinedNumber = "+917537979019";
     private Button sendSmsButton;
     private EditText smsEditText;
+
+    private CardView emergencyInfoCard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.activity_offline);
+        emergencyInfoCard = findViewById(R.id.emergencyInfoCard);
+
+        Button closeCardButton = findViewById(R.id.closeCardButton);
+        closeCardButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                hideEmergencyInfo(v);  // Hide the emergency info card
+            }
+        });
 
         setContentView(R.layout.activity_offline); // Set content view first
 
@@ -106,6 +120,17 @@ public class OfflineActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void showEmergencyInfo(View view) {
+        CardView emergencyInfoCard = findViewById(R.id.emergencyInfoCard);
+        emergencyInfoCard.setVisibility(View.VISIBLE); // Make the card visible
+    }
+
+    public void hideEmergencyInfo(View view) {
+        CardView emergencyInfoCard = findViewById(R.id.emergencyInfoCard);
+        emergencyInfoCard.setVisibility(View.GONE); // Hide the card
+    }
+
 
 
     // Request location updates if permission is granted

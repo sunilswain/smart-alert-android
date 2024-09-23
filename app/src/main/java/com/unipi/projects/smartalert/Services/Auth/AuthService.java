@@ -13,7 +13,7 @@ public class AuthService implements IAuthService{
     @Override
     public Single<AuthResult> Login(String email, String password) {
 
-        RetrofitService retrofitService = new RetrofitService("http://10.0.2.2:5000");
+        RetrofitService retrofitService = new RetrofitService("https://valued-lynx-climbing.ngrok-free.app");
 
         LoginRequest loginRequest = new LoginRequest();
 
@@ -30,7 +30,7 @@ public class AuthService implements IAuthService{
     @Override
     public Single<AuthResult> Register(String email, String phone, String password) {
 
-        RetrofitService retrofitService = new RetrofitService("http://10.0.2.2:5000");
+        RetrofitService retrofitService = new RetrofitService("https://valued-lynx-climbing.ngrok-free.app");
 
         RegisterRequest registerRequest = new RegisterRequest();
 
